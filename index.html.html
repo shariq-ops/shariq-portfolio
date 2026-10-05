@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shariq | Portfolio</title>
+<link href="file:///C|/Users/Administrator/AppData/Roaming/Adobe/Dreamweaver 2021/en_US/Configuration/Temp/Assets/eam8778.tmp/css/singlePageTemplate.css" rel="stylesheet" type="text/css">
+<script>var __adobe_webfonts_appname__="dreamweaver"</script>
+<script src="http://edgefonts.net" type="text/javascript"></script>
+
+<style>
+	html { scroll-behavior: smooth; }
+	body {
+		background-color: #fcfcfc;
+		color: #333333;
+		font-family: 'source-sans-pro', sans-serif;
+		margin: 0; padding: 0;
+	}
+	header {
+		background-color: #00A2C7 !important;
+		padding: 20px 40px !important;
+		display: flex !important;
+		justify-content: space-between !important;
+		align-items: center !important;
+		height: auto !important;
+		position: sticky; top: 0; z-index: 1000;
+	}
+	header .logo {
+		color: #ffffff !important;
+		font-weight: 700 !important;
+		letter-spacing: 2px !important;
+		margin: 0 !important;
+		display: inline-block !important;
+	}
+	header nav ul {
+		list-style: none !important;
+		margin: 0 !important; padding: 0 !important;
+		display: flex !important; gap: 20px !important;
+	}
+	header nav ul li a {
+		color: #ffffff !important;
+		text-decoration: none !important;
+		font-weight: 600 !important;
+	}
+	section {
+		padding: 70px 20px;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.hero {
+		background-color: #7b7b7b !important;
+		color: #ffffff !important;
+		text-align: center !important;
+		padding: 120px 20px !important;
+	}
+	.hero_header { font-size: 3.2rem !important; color: #ffffff !important; }
+	.tagline { font-size: 1.3rem !important; color: #ffffff !important; }
+	.section_title { text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; }
+	
+	/* Gallery Layout */
+	.gallery {
+		display: grid !important;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+		gap: 30px !important;
+		padding: 20px 0 !important;
+	}
+	.thumbnail {
+		background: #ffffff !important;
+		padding: 30px !important;
+		border-radius: 6px !important;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.06) !important;
+		border-top: 4px solid #00A2C7 !important;
+		cursor: pointer;
+		transition: transform 0.3s;
+	}
+	.thumbnail:hover { transform: translateY(-5px); }
+	.thumbnail img {
+		width: 100%; height: 200px; object-fit: cover; border-radius: 4px; margin-bottom: 15px;
+	}
+	.tag { color: #00A2C7 !important; font-weight: bold; text-transform: uppercase; }
+
+	/* Lightbox Popup System */
+	.lightbox {
+		display: none;
+		position: fixed; z-index: 2000;
+		left: 0; top: 0; width: 100%; height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		justify-content: center; align-items: center;
+	}
+	.lightbox-content {
+		max-width: 80%; max-height: 80%;
+		object-fit: contain; border-radius: 4px;
+	}
+	.close-btn {
+		position: absolute; top: 20px; right: 30px;
+		color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;
+	}
+	.nav-btn {
+		position: absolute; top: 50%; transform: translateY(-50%);
+		color: #fff; font-size: 40px; font-weight: bold; cursor: pointer;
+		padding: 16px; user-select: none; background: rgba(0,0,0,0.3); border-radius: 5px;
+	}
+	.prev { left: 20px; }
+	.next { right: 20px; }
+
+	footer { background-color: #1e1e1e !important; color: #ffffff !important; padding: 60px 20px !important; text-align: center !important; }
+	.footer_column h3 { color: #00A2C7 !important; font-size: 2rem; }
+	.hero {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+       transition: background-image 0.8s ease-in-out; 
+}
+	.contact-links a { color: #ffffff !important; margin: 0 10px !important; }
+</style>
+</head>
+
+<body>
+<div class="container"> 
+  
+  <!-- Navigation Header -->
+  <header>
+    <h4 class="logo">SHARIQ</h4>
+    <nav>
+      <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <h2 class="hero_header">Hi, I am SHARIQ.</h2>
+    <p class="tagline">3D VISUALIZATION | PHOTOGRAPHY | EDITING | BRANDING</p>
+</section>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="section_title">About Me</h2>
+    <p style="font-size: 1.25rem; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: center; color: #444; font-weight: 400;">I am a Freelancer who specialize in  </p>
+    <p style="font-size: 1.25rem; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: center; color: #444; font-weight: 400;">
+		3D architectural visualization, photography, editing and branding.
+    </p>
+  </section>
+  
+  <!-- Portfolio Showcase Section -->
+  <section id="portfolio">
+    <h2 class="section_title">Featured Work</h2>
+    <div class="gallery">
+      
+      <!-- Project 1: 3D Visualization -->
+      <div class="thumbnail" onclick="openLightbox('3d')">
+        <img src="images/3d/render1.png" alt="3D Architectural Visualization">
+        <h3>3D Architectural Render</h3>
+        <p class="tag">3D Architectural Visualization</p>
+        <p class="text_column">Click to view my photorealistic 3D interior renders and architectural structures.</p>
+      </div>
+      
+      <!-- Project 2: Photography -->
+      <div class="thumbnail" onclick="openLightbox('photography')">
+       <img src="images/Photography/1.JPG" alt="Photography & Editing" style="width: 100%; height: 220px; object-fit: cover; display: block; border-radius: 4px; margin-bottom: 15px;">
+        <h3>Creative Photography</h3>
+        <p class="tag">Photography &amp; Editing</p>
+        <p class="text_column">Click to view my professional color-graded photography gallery collections.</p>
+      </div>
+      
+      <!-- Project 3: Logo Branding -->
+      <div class="thumbnail" onclick="openLightbox('Branding')">
+        <img src="images/Branding/s1.png" alt="Logo Brand Identity">
+        <h3>Logo Brand Identity</h3>
+        <p class="tag">Branding &amp; Identity</p>
+        <p class="text_column">Click to view my comprehensive visual brand styling projects and corporate patterns.</p>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- Lightbox Window Element -->
+    <div id="lightboxOverlay" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightboxImg" ... class="lightbox-content" alt="Popup View">
+    <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
+  </div>
+
+  <footer id="contact">
+    <div class="footer_column">
+      <h3>LET'S WORK TOGETHER</h3>
+      <p style="font-size: 1.2rem; margin-bottom: 15px;"><strong>Email:</strong> <a href="mailto:tuanshariqs@gmail.com" style="color:#00A2C7;">tuanshariqs@gmail.com</a></p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/tuan-shariq-sukoor-03a80234a" target="_blank">LinkedIn</a> | 
+        <a href="https://www.instagram.com/starboystudio_7.0?stkn=MXM1MzlqN2EwcHoyeg==" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Popup Slider Javascript Engine -->
+<script>
+	// 1. Properly initialized array tracker variables
+	let currentImages = [];
+	let currentIndex = 0;
+	const heroImages = [
+    'images/3d/render1.png',
+    'images/3d/gazebo low.png',
+    'images/Branding/4.png',
+    'images/photography/5.jpg'
+];
+let currentHeroIndex = 0;
+
+function rotateHeroBackground() {
+    currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
+    const nextImage = heroImages[currentHeroIndex];
+    const heroElement = document.querySelector('.hero');
+    if (heroElement) {
+        heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${nextImage}')`;
+    }
+}
+setInterval(rotateHeroBackground, 4000)
+
+	// 2. Verified image slide pools definition matching your subfolders
+	const galleries = {
+		'3d': ['images/3d/render1.png', 'images/3d/render2.png', 'images/3d/render3.png', 'images/3d/perch.png', 'images/3d/Martial arts.jpg', 'images/3d/dresser table.png', 'images/3d/gazebo low.png', 'images/3d/money warehouse.png'],
+    'photography': ['images/photography/1.jpg', 'images/photography/2.jpg', 'images/photography/3.jpg', 'images/photography/4.jpg', 'images/photography/5.jpg'],
+    'Branding': ['images/Branding/sagitta.png', 'images/Branding/project 3.png', 'images/Branding/4.png', 'images/Branding/s1.png', 'images/Branding/5.png', 'images/Branding/little picasso.png', 'images/Branding/7.png', 'images/Branding/jolie.png']
+	};
+
+	function openLightbox(category) {
+		currentImages = galleries[category];
+		currentIndex = 0;
+		document.getElementById('lightboxImg').src = currentImages[currentIndex];
+		document.getElementById('lightboxOverlay').style.display = 'flex';
+	}
+
+	function closeLightbox() {
+		document.getElementById('lightboxOverlay').style.display = 'none';
+	}
+
+	function changeImage(direction) {
+		currentIndex += direction;
+		if (currentIndex >= currentImages.length) currentIndex = 0;
+		if (currentIndex < 0) currentIndex = currentImages.length - 1;
+		document.getElementById('lightboxImg').src = currentImages[currentIndex];
+	}
+</script>
+</body>
+</html>
