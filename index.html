@@ -226,7 +226,7 @@
       </div>
 
 	<div class="thumbnail" onclick="openLightbox('Posters')">
-        src="images/Posters/ferrari.png"
+        <img scr="images/Posters/ferrari.png" alt="Posters">
         <h3>Poster</h3>
         <p class="tag">Concept &amp; Manipulation</p>
         <p class="text_column">Click to view my unique visual concept styling projects and photo manipulation.</p>
@@ -240,7 +240,7 @@
     <div id="lightboxOverlay" class="lightbox">
     <span class="close-btn" onclick="closeLightbox()">&times;</span>
     <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
-    <img id="lightboxImg" ... class="lightbox-content" alt="Popup View">
+    <img id="lightboximg" ... class="lightbox-content" alt="Popup View">
     <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
   </div>
 
@@ -294,15 +294,15 @@ function openLightbox(index) {
   else if (index === 2 || index === 'Branding') { index = 'Branding'; }
   else if (index === 3 || index === 'Posters') { index = 'Posters'; }
   
-  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboximg = document.getElementById('lightboximg');
   const lightboxOverlay = document.getElementById('lightboxOverlay');
   
-  if (lightboxImg && lightboxOverlay && galleries[index]) {
+  if (lightboximg && lightboxOverlay && galleries[index]) {
     // Save the active category globally so your next/prev buttons work
     currentGallery = index; 
     currentImageIndex = 0;
     
-    lightboxImg.src = galleries[index][currentImageIndex];
+    lightboximg.src = galleries[index][currentImageIndex];
     lightboxOverlay.style.display = 'flex';
   }
 }
