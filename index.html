@@ -288,22 +288,48 @@ const galleries = {
 };
 
 function openLightbox(index) {
-  // Translate categories safely into active names
+  // Translate categories safely into active string keys
   if (index === 0 || index === '3d') { index = '3d'; }
   else if (index === 1 || index === 'Photography') { index = 'Photography'; }
   else if (index === 2 || index === 'Branding') { index = 'Branding'; }
   else if (index === 3 || index === 'Posters') { index = 'Posters'; }
   
-  const lightboximg = document.getElementById('lightboximg');
+  const lightboxImg = document.getElementById('lightboxImg');
   const lightboxOverlay = document.getElementById('lightboxOverlay');
   
-  if (lightboximg && lightboxOverlay && galleries[index]) {
-    // Save the active category globally so your next/prev buttons work
+  if (lightboxImg && lightboxOverlay && galleries[index]) {
+    // Save the active category globally so next/prev arrow buttons work
     currentGallery = index; 
     currentImageIndex = 0;
     
-    lightboximg.src = galleries[index][currentImageIndex];
+    lightboxImg.src = galleries[index][currentImageIndex];
     lightboxOverlay.style.display = 'flex';
+  }
+}
+
+function closeLightbox() {
+  const lightboxOverlay = document.getElementById('lightboxOverlay');
+  if (lightboxOverlay) {
+    lightboxOverlay.style.display = 'none';
+  }
+}
+
+function changeImage(direction) {
+  if (!currentGallery || !galleries[currentGallery]) return;
+  
+  // Calculate the next image index inside the active category array
+  currentImageIndex += direction;
+  
+  // Loop back if navigating out of bounds
+  if (currentImageIndex >= galleries[currentGallery].length) {
+    currentImageIndex = 0;
+  } else if (currentImageIndex < 0) {
+    currentImageIndex = galleries[currentGallery].length - 1;
+  }
+  
+  const lightboxImg = document.getElementById('lightboxImg');
+  if (lightboxImg) {
+    lightboxImg.src = galleries[currentGallery][currentImageIndex];
   }
 }
 
