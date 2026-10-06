@@ -119,25 +119,47 @@
        transition: background-image 0.8s ease-in-out; 
 }
 	.contact-links a { color: #ffffff !important; margin: 0 10px !important; }
-	/* Mobile Responsive Adjustments */
+/* Mobile Responsive Adjustments */
 @media screen and (max-width: 768px) {
-  /* Forces your project cards to stack vertically on small screens */
+  /* Fixes the hero background image container height and layout on phones */
+  .hero#home {
+    background-size: cover !important;
+    background-position: center center !important;
+    padding: 100px 20px !important;
+    height: auto !important;
+    min-height: 100vh !important; /* Makes it take up the full phone screen beautifully */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* Shrinks the large hero text and allows it to wrap normally */
+  .hero#home h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+  
+  /* Shrinks the paragraph description under your name */
+  .hero#home p {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Forces your project grid sections to stack cleanly vertically */
   .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   
   .thumbnail {
     width: 100% !important;
-    max-width: 400px;
+    max-width: 400px !important;
     margin: 15px auto !important;
-  }
-  
-  /* Prevents headers or text from shrinking into tiny text */
-  h1, h2 {
-    font-size: 1.8rem !important;
-    text-align: center;
   }
 }
 </style>
