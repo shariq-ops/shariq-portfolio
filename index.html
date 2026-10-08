@@ -259,80 +259,94 @@
 
 <!-- Popup Slider Javascript Engine -->
 <script>
-	// 1. Properly initialized array tracker variables
-	let currentImages = [];
-	let currentIndex = 0;
-	const heroImages = [
+  // 1. Properly initialize array tracker variables
+  let currentImageIndex = 0;
+  let currentGallery = '3d'; 
+
+  // 2. Define galleries with accurate arrays containing all project images
+  const galleries = {
+    '3d': [
+      'images/3d/render1.png',
+      'images/3d/gazebo low.png'
+    ],
+    'Photography': [
+      'images/Photography/5.jpg',
+      'images/Photography/1.jpg'
+    ],
+    'Branding': [
+      'images/Branding/4.png',
+      'images/Branding/s1.png'
+    ],
+    'Posters': [
+      'images/Posters/5.jpg',
+      'images/Posters/ferrari.png'
+    ]
+  };
+
+  // 3. Background Rotator Engine
+  const heroImages = [
     'images/3d/render1.png',
     'images/3d/gazebo low.png',
     'images/Branding/4.png',
     'images/Photography/5.jpg'
-];
-let currentHeroIndex = 0;
+  ];
+  let currentHeroIndex = 0;
 
-function rotateHeroBackground() {
+  function rotateHeroBackground() {
     currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
     const nextImage = heroImages[currentHeroIndex];
     const heroElement = document.querySelector('.hero');
     if (heroElement) {
-        heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${nextImage}')`;
+      heroElement.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${nextImage}')`;
     }
-}
-setInterval(rotateHeroBackground, 4000)
-
-const galleries = {
-  '3d': ['images/3d/gazebo low.png'],
-  'Photography': ['images/Photography/1.jpg'],
-  'Branding': ['images/Branding/b1.png'],
-  'Posters': ['images/Posters/ferrari.png']
-};
-
-function openLightbox(index) {
-  // Translate categories safely into active string keys
-  if (index === 0 || index === '3d') { index = '3d'; }
-  else if (index === 1 || index === 'Photography') { index = 'Photography'; }
-  else if (index === 2 || index === 'Branding') { index = 'Branding'; }
-  else if (index === 3 || index === 'Posters') { index = 'Posters'; }
-  
-  const lightboxImg = document.getElementById('lightboxImg');
-  const lightboxOverlay = document.getElementById('lightboxOverlay');
-  
-  if (lightboxImg && lightboxOverlay && galleries[index]) {
-    // Save the active category globally so next/prev arrow buttons work
-    currentGallery = index; 
-    currentImageIndex = 0;
-    
-    lightboxImg.src = galleries[index][currentImageIndex];
-    lightboxOverlay.style.display = 'flex';
   }
-}
+  setInterval(rotateHeroBackground, 4000);
 
-function closeLightbox() {
-  const lightboxOverlay = document.getElementById('lightboxOverlay');
-  if (lightboxOverlay) {
-    lightboxOverlay.style.display = 'none';
-  }
-}
+  // 4. Lightbox Core Functionality
+  function openLightbox(galleryKey) {
+    // Fallback if numbers are accidentally passed
+    if (galleryKey === 0 || galleryKey === '0') galleryKey = '3d';
+    if (galleryKey === 1 || galleryKey === '1') galleryKey = 'Photography';
+    if (galleryKey === 2 || galleryKey === '2') galleryKey = 'Branding';
+    if (galleryKey === 3 || galleryKey === '3') galleryKey = 'Posters';
 
-function changeImage(direction) {
-  if (!currentGallery || !galleries[currentGallery]) return;
-  
-  // Calculate the next image index inside the active category array
-  currentImageIndex += direction;
-  
-  // Loop back if navigating out of bounds
-  if (currentImageIndex >= galleries[currentGallery].length) {
-    currentImageIndex = 0;
-  } else if (currentImageIndex < 0) {
-    currentImageIndex = galleries[currentGallery].length - 1;
-  }
-  
-  const lightboxImg = document.getElementById('lightboxImg');
-  if (lightboxImg) {
-    lightboxImg.src = galleries[currentGallery][currentImageIndex];
-  }
-}
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
 
+    if (lightboxImg && lightboxOverlay && galleries[galleryKey]) {
+      currentGallery = galleryKey;
+      currentImageIndex = 0; // Always start at the first image of the category
+
+      lightboxImg.src = galleries[currentGallery][currentImageIndex];
+      lightboxOverlay.style.display = 'flex';
+    }
+  }
+
+  function closeLightbox() {
+    const lightboxOverlay = document.getElementById('lightboxOverlay');
+    if (lightboxOverlay) {
+      lightboxOverlay.style.display = 'none';
+    }
+  }
+
+  function changeImage(direction) {
+    if (!currentGallery || !galleries[currentGallery]) return;
+
+    // Calculate the next image index position
+    currentImageIndex += direction;
+
+    // Loop back if navigating out of bounds
+    if (currentImageIndex >= galleries[currentGallery].length) {
+      currentImageIndex = 0;
+    } else if (currentImageIndex < 0) {
+      currentImageIndex = galleries[currentGallery].length - 1;
+    }
+
+    const lightboxImg = document.getElementById('lightboxImg');
+    if (lightboxImg) {
+      lightboxImg.src = galleries[currentGallery][currentImageIndex];
+    }
+  }
 </script>
 </body>
 </html>
